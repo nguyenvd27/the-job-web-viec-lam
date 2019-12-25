@@ -1,0 +1,4 @@
+<%= form_for @job , url: user_job_path(current_user, @job.id) do |f| %>
+  <%= render "components/job/form/header", f: f %>
+  <%= render "components/job/form/main", f: f %>
+<% end %>

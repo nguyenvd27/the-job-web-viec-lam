@@ -1,0 +1,25 @@
+<!-- Page header -->
+<header class="page-header bg-img size-lg" style="background-image: url(http://file.vinacircle.info/news/image/2017/Mar/fun_facts/ngan_ha_1.0.jpg)">
+  <div class="container no-shadow">
+    <h1 class="text-center">Quản lý việc làm</h1>
+    <p class="lead text-center">Danh sách các việc làm đã gửi. Có thể chỉnh sửa, xóa hoặc thêm mới.</p>
+  </div>
+</header>
+<!-- END Page header -->
+<!-- Main container -->
+<main>
+  <section class="no-padding-top bg-alt">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-right">
+          <br>
+          <a class="btn btn-primary btn-sm" href="<%= new_user_job_path(current_user) %>">Thêm việc làm mới</a>
+        </div>
+        <% @jobs.each do |job| %>
+          <%= render "job_detail", job: job %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- END Main container -->

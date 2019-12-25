@@ -1,0 +1,22 @@
+<main>
+    <section>
+      <%= f.fields_for :job_details do |job_detail|%>
+      <div class="container">
+        <header class="section-header">
+          <span>Mô tả</span>
+          <h2>Chi tiết việc làm</h2>
+          <p>Viết một số thông tin về công ty, mô tả công việc, kỹ năng cần thiết, phúc lợi ích,...</p>
+        </header>
+        <%= job_detail.cktext_area :content, class: "form-group"%>
+      </div>
+      <% end %>
+    </section>
+    <section class="bg-alt">
+      <div class="container">
+        <header class="section-header">
+          <h2>Bạn đã hoàn thành?</h2>
+        </header>
+        <p class="text-center"><%= f.submit "Gửi Việc Làm", class: "btn btn-success btn-xl btn-round" %></p>
+      </div>
+    </section>
+</main>

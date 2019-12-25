@@ -1,0 +1,22 @@
+<header class="page-header bg-img size-lg" style="background-image: url(http://file.vinacircle.info/news/image/2017/Mar/fun_facts/ngan_ha_1.0.jpg)">
+  <div class="container no-shadow">
+    <h1 class="text-center">Quản lý hồ sơ</h1>
+    <p class="text-center">Tất cả hồ sơ của bạn được hiển thị bên dưới. Bạn có thể chỉnh sửa, xóa, hoặc tạo một hồ sơ mới</p>
+  </div>
+</header>
+
+<main>
+  <section class="no-padding-top bg-alt">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-right">
+          <br>
+          <a class="btn btn-primary btn-sm" href="<%= new_user_resume_path(current_user) %>">Tạo hồ sơ mới</a>
+        </div>
+        <% @resumes.each do |resume| %>
+          <%= render "components/resumes/resume_item_type2" , resume: resume%>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</main>

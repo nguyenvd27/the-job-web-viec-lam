@@ -1,0 +1,63 @@
+<header class="page-header bg-img" style="background-image: url(http://file.vinacircle.info/news/image/2017/Mar/fun_facts/ngan_ha_1.0.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <% if @resume.basic_infos.first.link_avatar %>
+          <img class="resume-avatar" src="<%= @resume.basic_infos.first.link_avatar %>" alt="">
+        <% else %>
+          <img src="<%= @resume.basic_infos.first.user_avatar %>" alt="">
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-sm-8 header-detail">
+        <div class="hgroup">
+          <h1><%= @resume.basic_infos.first.full_name %></h1>
+          <h3><%= @resume.basic_infos.first.headline %></h3>
+        </div>
+        <hr>
+        <p class="lead"><%= @resume.basic_infos.first.description %></p>
+        <ul class="details cols-2">
+          <li>
+            <i class="fa fa-map-marker"></i>
+            <span><%= @resume.basic_infos.first.location %></span>
+          </li>
+          <li>
+            <i class="fa fa-globe"></i>
+            <a href="#"><%= @resume.basic_infos.first.website %></a>
+          </li>
+          <li>
+            <i class="fa fa-money"></i>
+            <span>$<%= @resume.basic_infos.first.salary %> / hour</span>
+          </li>
+          <li>
+            <i class="fa fa-birthday-cake"></i>
+            <span><%= @resume.basic_infos.first.age %> years-old</span>
+          </li>
+          <li>
+            <i class="fa fa-phone"></i>
+            <span><%= @resume.basic_infos.first.phone %></span>
+          </li>
+          <li>
+            <i class="fa fa-envelope"></i>
+            <a href="#"><%= @resume.basic_infos.first.email_address %>e</a>
+          </li>
+        </ul>
+        <div class="tag-list">
+          <% @resume.tag_list.each do |tag| %>
+            <span><%= link_to tag , tag_path(tag) %></span> 
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% if(@resume.socials.first != nil)%>
+      <div class="button-group">
+        <ul class="social-icons">
+          <li><a class="facebook" href="<%= @resume.socials.first.facebook_link %>"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="instagram" href="<%= @resume.socials.first.github_link %>"><i class="fa fa-github"></i></a></li>
+        </ul>
+        <div class="action-buttons">
+          <a class="btn btn-success" data-toggle="modal" data-target="#modal-contact" href="#">Liên lạc với tôi</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</header>

@@ -1,0 +1,23 @@
+<header class="site-header size-lg text-center" style="background-image: 
+  url(http://file.vinacircle.info/news/image/2017/Mar/fun_facts/ngan_ha_1.0.jpg)">
+  <div class="container">
+    <div class="col-xs-12">
+      <br><br>
+      <h2 style="color: white">Chúng tôi đang có <mark><%= @jobs.count %></mark> việc làm</h2>
+      <h5 class="font-alt" style="color: white">Việc làm <mark>nhiều</mark> như những vì sao, Tìm kiếm việc <mark>nhanh</mark> như tốc độ dãn nở của vũ trụ</h5>
+      <br><br><br>
+      <%= search_form_for @q, url: search_path, html: {class: "header-job-search"} do |f| %>
+        <div class="input-keyword">
+          <%= f.text_field :title_or_company_name_or_employment_type_cont,
+            class: "form-control", placeholder: "việc làm, vị trí công việc hoặc công ty" %>
+        </div>
+        <div class="input-location">
+          <%= f.text_field :location_cont, class: "form-control", placeholder: "Thành phố" %>
+        </div>
+        <div class="btn-search">
+          <%= f.submit "Tìm Kiếm", class: "btn btn-primary", type: "submit" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</header>

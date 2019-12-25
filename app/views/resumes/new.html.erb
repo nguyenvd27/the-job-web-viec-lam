@@ -1,0 +1,34 @@
+<%= form_for @resume , url: user_resumes_path do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.fields_for :basic_infos do |basic_info| %>
+    <%= render "components/resume/basic_info", basic_info: basic_info, f: f %>
+  <% end %>
+
+  <%= f.fields_for :socials do |social| %>
+    <%= render "components/resume/social_media", social: social %>
+  <% end %>
+
+  <%= f.fields_for :educations do |education| %>
+    <%= render "components/resume/education", education: education, f: f %>
+  <% end %>
+
+  <%= f.fields_for :work_experiences do |work_experience| %> 
+    <%= render "components/resume/work_experience", work_experience: work_experience,
+      f: f %>
+  <% end %>
+
+  <%= f.fields_for :skills do |skill| %>
+    <%= render "components/resume/skill", skill: skill, f: f %>
+  <% end %>
+
+  <section class=" bg-img" style="background-image: url(https://www.internship.edu.vn/wp-content/uploads/2015/01/banner-background.jpg);">
+    <div class="container">
+      <header class="section-header">
+        <h2>Bạn đã hoàn thành?</h2>
+      </header>
+      <p class="text-center"> <%= f.submit "Tạo hồ sơ", class: "btn btn-success btn-xl btn-round" %></p>
+    </div>
+  </section>
+<% end %>
+

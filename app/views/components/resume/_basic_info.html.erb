@@ -1,0 +1,79 @@
+<header class="page-header" style="background-image: 
+  url(http://file.vinacircle.info/news/image/2017/Mar/fun_facts/ngan_ha_1.0.jpg)">
+  <div class="container page-name">
+    <h1 class="text-center">Tạo hồ sơ</h1>
+    <p class="lead text-center">Hãy tạo cho mình một hồ sơ thật đẹp, gây ấn tượng với các nhà tuyển dụng</p>
+  </div>
+  <%= basic_info.hidden_field :user_id, value: current_user.id %>
+  <div class="container">
+    <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="form-group">
+        <%= basic_info.file_field :user_avatar, class: "dropify" %>
+        <span class="help-block">Hãy chọn bức ảnh 4x6.</span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-8">
+      <div class="form-group">
+        <%= basic_info.text_field :full_name, class: "form-control input-lg", placeholder: "Tên" %>
+      </div>
+      <div class="form-group">
+        <%= basic_info.text_field :headline, class: "form-control", placeholder: "Vị trí ứng tuyển (ví dụ: Front-end developer)" %>
+      </div>
+      <div class="form-group">
+        <%= basic_info.text_area :description, class: "form-control", rows: "3", cols: "76", placeholder: "Mô tả ngắn về bạn" %>
+      </div>
+      <hr class="hr-lg">
+      <h6>Thông tin cơ bản</h6>
+      <div class="row">
+        <div class="form-group col-xs-12 col-sm-6">
+          <div class="input-group input-group-sm">
+            <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+            <%= basic_info.text_field :location, class: "form-control", placeholder: "Địa chỉ (ví dụ: Hà Nội" %>
+          </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-6">
+          <div class="input-group input-group-sm">
+            <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+            <%= basic_info.text_field :website, class: "form-control", placeholder: "Website cá nhân" %>
+          </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-6">
+          <div class="input-group input-group-sm">
+            <span class="input-group-addon"><i class="fa fa-usd"></i></span>
+            <%= basic_info.text_field :salary, class: "form-control", placeholder: "Lương mong muốn, ví dụ: 100"%>
+            <span class="input-group-addon"> / giờ</span>
+          </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-6">
+          <div class="input-group input-group-sm">
+            <span class="input-group-addon"><i class="fa fa-birthday-cake"></i></span>
+            <%= basic_info.text_field :age, class: "form-control", placeholder: "Tuổi" %>
+            <span class="input-group-addon">Tuổi</span>
+          </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-6">
+          <div class="input-group input-group-sm">
+            <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+            <%= basic_info.text_field :phone, class: "form-control", placeholder: "Số điện thoại" %>
+          </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-6">
+          <div class="input-group input-group-sm">
+            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+            <%= basic_info.text_field :email_address, class: "form-control", placeholder: "Địa chỉ Email" %>
+          </div>
+        </div>
+      </div>
+      <hr class="hr-lg">
+      <h6>Tags</h6>
+      <div class="form-group">
+        <div class= "bootstrap-tagsinput">
+          <%= f.text_field :tag_list, placeholder: "Tên thẻ" %>
+          <span class="help-block">Cách nhau bằng dấu phẩy</span>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</header>

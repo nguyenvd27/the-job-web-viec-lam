@@ -1,0 +1,46 @@
+<section>
+  <div class="container">
+    <header class="section-header">
+      <h2>Kinh nghiệm làm việc</h2>
+    </header>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="item-block">
+          <div class="item-form">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12">
+                <div class="form-group">
+                  <%= work_experience.text_field :company , 
+                  class: "form-control", placeholder: "Tên công ty" %>
+                </div>
+                <div class="form-group">
+                  <%= work_experience.text_field :position, 
+                    class:"form-control", placeholder: "Ví trí, ví dụ: web developer" %>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon">Từ ngày</span>
+                    <%= work_experience.date_field :date_from, class: "form-control", placeholder: "e.g. 2012"  %>
+                    <span class="input-group-addon">Đến ngày</span>
+                    <%= work_experience.date_field :date_to, class: "form-control", placeholder: "e.g. 2016"  %>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12">
+                <div class="form-group">
+                  <%= work_experience.cktext_area :description %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 text-center">
+        <br>
+        <%= link_to_add_association "Thêm kinh nghiệm làm việc" , f, :work_experiences ,
+          partial: "components/resume/work_experience_fields", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</section>

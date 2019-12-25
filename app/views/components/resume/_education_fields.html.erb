@@ -1,0 +1,35 @@
+<div class="nested-fields">
+  <div class="col-xs-12">
+    <div class="item-block">
+      <div class="item-form">
+        <button class="btn btn-danger btn-float btn-remove"><i class="ti-close"></i></button>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12">
+            <div class="form-group">
+              <%= f.text_field :degree, class: "form-control", placeholder: "Trình độ, ví dụ: Kỹ sư" %>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Chuyên môn, ví dụ: Khoa học máy tính">
+            </div>
+            <div class="form-group">
+              <%= f.text_field :school_name, class: "form-control",
+               placeholder:"Tên trường, ví dụ: Đại học Bách Khoa Hà Nội" %>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">Từ ngày</span>
+                <%= f.date_field :date_from , class: "form-control", placeholder: "e.g. 2012" %>
+                <span class="input-group-addon">Đến ngày</span>
+                <%= f.date_field :date_to , class: "form-control", placeholder: "e.g. 2016" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.text_area :description, placeholder: "Mô tả ngắn",  cols: "117" ,rows: "3" %>
+            </div>
+          </div>
+        </div>
+        <%= link_to_remove_association "X", f , class: "btn btn-danger btn-float btn-remove" %>
+      </div>
+    </div>
+  </div>
+</div>

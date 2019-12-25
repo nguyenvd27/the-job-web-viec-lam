@@ -1,0 +1,70 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="pull-left">
+      <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
+      <div class="logo-wrapper">
+        <a class="logo" href="/"><img src="https://firebasestorage.googleapis.com/v0/b/image-1c367.appspot.com/o/logo2.png?alt=media&token=dd7a7608-a6bd-45f2-b4f2-c94414e0934e" alt="logo"></a>
+        <a class="logo-alt" href="/"><img src="https://firebasestorage.googleapis.com/v0/b/image-1c367.appspot.com/o/logo2.png?alt=media&token=dd7a7608-a6bd-45f2-b4f2-c94414e0934e" alt="logo-alt"></a>
+      </div>
+    </div>
+    <% if user_signed_in? %>
+      <div class="pull-right">
+        <div class="dropdown user-account">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <% if current_user.basic_infos.first %>
+              <% if current_user.basic_infos.first.link_avatar %>
+                <img src="<%= current_user.basic_infos.first.link_avatar %>" alt="avatar">
+              <% else %>
+                <img src="<%= current_user.basic_infos.first.user_avatar %>" alt="avatar" %>
+              <% end %>
+            <% else %>
+              <img src="https://raw.githubusercontent.com/lampv318/image/master/noavatar-1.jpg">
+            <% end %>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><%= link_to "Đăng xuất" , logout_path , method: "delete" %></li>
+          </ul>
+        </div>
+      </div>
+    <% else %>
+      <div class="pull-right user-login">
+        <a class="btn btn-sm btn-primary" href="<%= login_path %>">Đăng nhập</a> or <a href="<%= signup_path %>">Đăng ký</a>
+      </div>
+    <% end %>
+    <div class = "pull-right">
+      <%= form_with url: qsearch_path, local: true, method: :get do |f|%>
+      <%= f.text_field :q, type: "search", data: {behavior: "autocomplete"}, placeholder: "Tìm kiếm tên hoặc email..." %>
+      <% end %>
+    </div>
+    <ul class="nav-menu">
+      <li><%= link_to "Trang chủ", root_path %></li> 
+      <li>
+        <a href="#">Việc</a>
+        <ul>
+          <li><a href="<%= jobs_path %>">Tìm Việc</a></li>
+          <% if user_signed_in? %>
+            <li><a href="<%= new_user_job_path(current_user) %>">Đăng việc</a></li>
+            <li><a href="<%= manager_jobs_path %>">Quản lý việc</a></li>
+          <% else %>
+            <li><a href="<%= login_path %>">Đăng việc</a></li>
+            <li><a href="<%= login_path %>">Quản lý việc</a></li>
+          <% end %>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Hồ sơ</a>
+        <ul>
+          <li><a href="<%= resumes_path %>">Tìm kiếm hồ sơ</a></li>
+          <% if user_signed_in? %>
+            <li><a href="<%= new_user_resume_path(current_user) %>">Tạo hồ sơ</a></li>
+            <li><a href="<%= manager_resumes_path%>">Quản lý hồ sơ</a></li>
+          <% else %>
+            <li><a href="<%= login_path %>">Tạo hồ sơ</a></li>
+            <li><a href="<%= login_path%>">Quản lý hồ sơ</a></li>
+          <% end %>
+        </ul>
+      </li>
+      <li><%= link_to "Blog", blog_path %></li>
+    </ul>
+  </div>
+</nav>

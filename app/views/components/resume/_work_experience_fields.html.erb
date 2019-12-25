@@ -1,0 +1,34 @@
+<div class="nested-fields">
+  <div class="col-xs-12">
+    <div class="item-block">
+      <div class="item-form">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8">
+            <div class="form-group">
+              <%= f.text_field :company , 
+              class: "form-control", placeholder: "Tên công ty" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :position, 
+                class:"form-control", placeholder: "Vị trí, ví dụ: web developer" %>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">Từ ngày</span>
+                <%= f.date_field :date_from, class: "form-control", placeholder: "e.g. 2012"  %>
+                <span class="input-group-addon">Đến ngày</span>
+                <%= f.date_field :date_to, class: "form-control", placeholder: "e.g. 2016"  %>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <%= f.cktext_area :description %>
+            </div>
+          </div>
+        </div>
+      <%= link_to_remove_association "X", f , class: "btn btn-danger btn-float btn-remove" %>
+      </div>
+    </div>
+  </div>
+</div>

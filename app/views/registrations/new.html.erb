@@ -1,0 +1,35 @@
+ <body class="login-page">
+  <main>
+  <div class="login-block">
+    <img src="https://firebasestorage.googleapis.com/v0/b/image-1c367.appspot.com/o/logo2.png?alt=media&token=dd7a7608-a6bd-45f2-b4f2-c94414e0934e" alt="">
+    <h1>Đăng ký tài khoản mới</h1>
+    <%= form_for @user, url: signup_path do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+     <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="ti-user"></i></span>
+          <%= f.text_field :account_name, class: "form-control", placeholder: "Họ tên" %>
+        </div>
+      </div>
+      <hr class="hr-xs">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="ti-email"></i></span>
+          <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+        </div>
+      </div>
+      <hr class="hr-xs">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="ti-unlock"></i></span>
+          <%= f.password_field :password, class: "form-control", placeholder: "Mật khẩu" %>
+        </div>
+      </div>
+      <%= f.submit "ĐĂNG KÝ", class: "btn btn-primary btn-block" %> 
+    <% end %>
+  </div>
+  <div class="login-links">
+    <p class="text-center">Bạn đã có tài khoản? <a class="txt-brand" href="<%= login_path %>">Đăng nhập</a></p>
+  </div>
+</main>
+</body>

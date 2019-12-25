@@ -1,0 +1,29 @@
+<body class="login-page">
+  <main>
+    <div class="login-block">
+      <img src="https://firebasestorage.googleapis.com/v0/b/image-1c367.appspot.com/o/logo2.png?alt=media&token=dd7a7608-a6bd-45f2-b4f2-c94414e0934e" alt="">
+      <h1>Đăng nhập</h1>
+
+      <%= form_for :user, url: login_path do |f| %>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="ti-email"></i></span>
+            <%= f.text_field :email, class: "form-control", placeholder: "Nhập Email" %>
+          </div>
+        </div>
+          <hr class="hr-xs">
+        <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="ti-unlock"></i></span>
+          <%= f.password_field :password, class: "form-control", placeholder: "Nhập mật khẩu" %>
+        </div>
+      </div>
+        <%= f.submit "ĐĂNG NHẬP", class: "btn btn-primary btn-block" %> 
+      <% end %>
+    </div>
+    <div class="login-links">
+      <a class="pull-left" href="#">Quên mật khẩu?</a>
+      <a class="pull-right" href="<%= signup_path %>">Đăng ký tài khoản mới</a>
+    </div>
+  </main>
+</body>
