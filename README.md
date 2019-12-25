@@ -1,24 +1,26 @@
-# README
+# The Job - Web Việc Làm
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project Môn học hệ thống thông tin trên web, được viết bằng ruby on rails
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**Các chức năng của website**:
+  - Đăng nhập/Đăng ký
+  - Tìm Việc Làm
+  - Đăng Việc Làm
+  - Quản Lý Việc Làm
+  - Tìm Hồ Sơ
+  - Viết Hồ Sơ
+  - Quản Lý Hồ Sơ
+  - Ứng Tuyển Việc
+---
+**Các kỹ thuật sử dụng**:
+  - Dynamic form/Nested Attributes
+  - Auto suggestion (Jquery auto complete)
+  - Dialog modal (JQuery dialog)
+  - Send mail
+---
+**Hướng dẫn sử dụng**:
+1. Install Ruby, Rails.
+2. Clone repo từ github về, mở Terminal và thực hiện các lệnh sau:
+3. `bundle install`
+4. `rake db:migrate`
+5. `rails s`
