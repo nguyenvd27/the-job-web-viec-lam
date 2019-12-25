@@ -18,7 +18,7 @@ Project Môn học hệ thống thông tin trên web, được viết bằng rub
   - Dialog modal (JQuery dialog)
   - Send mail
 ---
-**Hướng dẫn sử dụng**:
+**Hướng dẫn cài đặt**:
 1. Install Ruby, Rails.
 2. Clone repo từ github về, mở Terminal và thực hiện các lệnh sau:
 3. `bundle install`
